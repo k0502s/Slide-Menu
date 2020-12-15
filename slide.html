@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../slide/fontello-b4d12fd7/css/fontello.css">
+    
+    <title>slide menu</title>
+    <style>
+        body{
+            margin: -8px;
+           background-color: #ebe5e7;
+        }
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Varela+Round&display=swap');
+
+    /*meun*/
+
+	.VirtualView {
+        
+		width: 400px;
+        height: 1530.35px;
+		overflow: hidden;
+		position: relative;
+	}
+
+	.hideMenuBody {
+        margin-right: 10px;
+		width: 250px;
+		height: 100%;
+		background-color: #ffffff;
+		padding-top: 100px;
+		transition: transform 600ms;
+		transform: translate(-250px, 0px);
+
+		-ms-transition: -ms-transform 600ms;
+		-webkit-transition: -webkit-transform 600ms;
+		-moz-transition: -moz-transform 600ms;
+		-o-transition: -o-transform 600ms;
+
+		-ms-transform: translate(-250px, 0px);
+		-webkit-transform: translate(-250px, 0px);
+		-moz-transform: translate(-250px, 0px);
+		-o-transform: translate(-250px, 0px);
+	}
+
+	.hideMenuBody > div {
+        font-family: 'Varela Round', sans-serif;
+      
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 12px;
+		width: 250px;
+		height: 30px;
+		line-height: 30px;
+		vertical-align: middle;
+		text-align: center;
+		color:  #716f6f;
+		cursor: pointer;
+		margin-bottom: 1px;
+		
+	}
+
+	.hideMenuBody > div:hover {
+		background-color: #efa0a0;
+	}
+
+	
+	.circleBt {
+        font-size:30px;
+		width: 100px;
+		height: 1500px;
+		position: absolute;
+		bottom: 10px;
+		left: 23px;
+	    cursor: pointer;
+        color: #efa0a0;
+		
+	}
+
+	.circleBt:hover {
+		
+	}
+
+/*section main*/
+        
+        
+        
+        
+    
+    
+    </style>
+    
+    </head>
+    
+<body>
+    
+    <div class="VirtualView">
+	<div class="hideMenuBody" id="hideMenuBodyId">
+		<div>HOME</div>
+		<div>Menu 2</div>
+		<div>Menu 3</div>
+		<div>Menu 4</div>
+		<div>Menu 5</div>
+		<div onclick="closeLeftMenu(); return false;">Close</div>
+	</div>
+        
+<div class="circleBt" id="circleBt" onclick="showLeftMenu(this); return false;"><i class= "icon-align-justify"></i></div>
+	
+</div>
+    
+    </body>
+
+</html>
+
+<script>
+
+
+function showLeftMenu(){
+		var circleBtObj = document.getElementById('circleBt');
+		var leftMenuObj = document.getElementById('hideMenuBodyId');
+		circleBtObj.style['display'] = "none";
+		leftMenuObj.style['transform'] = "translate(0px, 0px)";
+		
+		leftMenuObj.style['msTransform'] = "translate(0px, 0px)";
+		leftMenuObj.style['mozTransform'] = "translate(0px, 0px)";
+		leftMenuObj.style['webkitTransform'] = "translate(0px, 0px)";
+		leftMenuObj.style['oTransform'] = "translate(0px, 0px)";
+	}
+
+	function closeLeftMenu() {
+		var circleBtObj = document.getElementById('circleBt');
+		var leftMenuObj = document.getElementById('hideMenuBodyId');
+
+		circleBtObj.style['display'] = "block";
+		leftMenuObj.removeAttribute("style");
+	}
+
+
+</script>
